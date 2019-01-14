@@ -1,0 +1,16 @@
+server:
+  port: 8888
+zuul:
+  host:
+    max-per-route-connections: 60000
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
+  routes:
+    api-1:
+      path: /api/**
+      url: http://localhost:8666/api/
+      custom-sensitive-headers: true
+
+#    api-2:
+#      path: /club/**
+#      url: http://localhost:8082/
